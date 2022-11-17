@@ -8,6 +8,11 @@ public class ProgramWindow extends JFrame {
 
     public ProgramWindow() throws HeadlessException {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        ProgramPanel programPanel = new ProgramPanel();
+        setSize(1280, 720);
+        ProgramPanel programPanel = new ProgramPanel(this);
+        add(programPanel);
+        setResizable(false);
+
+        setVisible(true);
     }
 }

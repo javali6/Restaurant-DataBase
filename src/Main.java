@@ -1,3 +1,5 @@
+import UI.ProgramWindow;
+
 import java.sql.*;
 
 public class Main {
@@ -10,11 +12,7 @@ public class Main {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        Statement statement = connection.createStatement();
 
-        ResultSet resultSet = statement.executeQuery("select * from lokale");
-        while (resultSet.next()) {
-            System.out.println(resultSet.getString("ulica"));
-        }
+        new ProgramWindow();
     }
 }
