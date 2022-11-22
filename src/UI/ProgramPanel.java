@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 public class ProgramPanel extends JPanel {
 
@@ -14,10 +15,15 @@ public class ProgramPanel extends JPanel {
     JButton button1;
     JButton button2;
     JButton button3;
+    JButton backButton = new JButton("Powrót");;
 
-    public ProgramPanel(ProgramWindow programWindow) {
+    Connection connection;
+
+    public ProgramPanel(ProgramWindow programWindow, Connection connection) {
+        this.connection = connection;
         setLayout(new FlowLayout(FlowLayout.CENTER));
-        ActionListener actionListener = new ActionListener(programWindow);
+        ActionListener actionListener = new ActionListener(programWindow, this);
+        setBackground(Color.GRAY);
 
         button1 = new JButton("1 Dodawanie");
         button1.setSize(450, 450);
@@ -40,13 +46,25 @@ public class ProgramPanel extends JPanel {
     public ProgramPanel(ProgramWindow programWindow, int type) {
         switch (type) {
             case ADDING -> {
+                ActionListener actionListener = new ActionListener(programWindow, this);
                 System.out.println("jaj");
+                setBackground(Color.lightGray);
+                add(backButton);
+                backButton.addActionListener(actionListener);
             }
             case MODIFY -> {
+                ActionListener actionListener = new ActionListener(programWindow, this);
                 System.out.println("dup");
+                setBackground(Color.lightGray);
+                add(backButton);
+                backButton.addActionListener(actionListener);
             }
             case QUERY -> {
+                ActionListener actionListener = new ActionListener(programWindow, this);
                 System.out.println("buź");
+                setBackground(Color.lightGray);
+                add(backButton);
+                backButton.addActionListener(actionListener);
             }
         }
 
@@ -55,10 +73,13 @@ public class ProgramPanel extends JPanel {
     private class ActionListener implements java.awt.event.ActionListener {
 
         ProgramWindow programWindow;
+        ProgramPanel programPanel;
 
-        public ActionListener(ProgramWindow programWindow) {
+        public ActionListener(ProgramWindow programWindow, ProgramPanel programPanel) {
             this.programWindow = programWindow;
+            this.programPanel = programPanel;
         }
+
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -81,6 +102,13 @@ public class ProgramPanel extends JPanel {
                 programWindow.setContentPane(queryPanel);
                 programWindow.invalidate();
                 programWindow.validate();
+            } else if (e.getSource().equals(backButton)) {
+                System.out.println("4");
+                programPanel = new ProgramPanel(programWindow, connection);
+                programWindow.setContentPane(programPanel);
+                programWindow.invalidate();
+                programWindow.validate();
+
             }
         }
     }

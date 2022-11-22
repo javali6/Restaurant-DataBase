@@ -13,6 +13,6 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        new ProgramWindow();
+        new ProgramWindow(connection);
     }
 }
