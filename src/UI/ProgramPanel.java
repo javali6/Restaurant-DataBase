@@ -3,7 +3,6 @@ package UI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 
 public class ProgramPanel extends JPanel {
@@ -11,13 +10,21 @@ public class ProgramPanel extends JPanel {
     public static final int ADDING = 1;
     public static final int MODIFY = 2;
     public static final int QUERY = 3;
+    public static final int ADDITIONAL = 4;
 
     JButton button1;
     JButton button2;
     JButton button3;
+    JButton button4;
     JButton backButton = new JButton("Powrót");;
 
     Connection connection;
+
+    String listOfTables[] ={"Lokale", "Magazyn", "Menu",
+            "Skladniki", "Pracownicy", "Rachunki", "Sale", "Wyposazenie kuchni",
+            "Wyposazenie sali", "Zamowienia", "Zapotrzebowanie"};
+
+    String listOfQuery[] = {"Zapytanie", "Zapytanie2"};
 
     public ProgramPanel(ProgramWindow programWindow, Connection connection) {
         this.connection = connection;
@@ -37,39 +44,103 @@ public class ProgramPanel extends JPanel {
         button3.setSize(450, 450);
         button3.addActionListener(actionListener);
 
+        button4 = new JButton("4 Dodatki");
+        button4.setSize(450, 450);
+        button4.addActionListener(actionListener);
+
         add(button1);
         add(button2);
         add(button3);
+        add(button4);
 
     }
 
     public ProgramPanel(ProgramWindow programWindow, int type) {
         switch (type) {
             case ADDING -> {
+                BorderLayout borderLayout = new BorderLayout();
+                setLayout(borderLayout);
+
                 ActionListener actionListener = new ActionListener(programWindow, this);
-                System.out.println("jaj");
+                System.out.println("dodawanie");
                 setBackground(Color.lightGray);
-                add(backButton);
+                add(backButton, BorderLayout.PAGE_END);
                 backButton.addActionListener(actionListener);
+
+               JComboBox<String> comboBox = new JComboBox<>(listOfTables);
+               comboBox.setPreferredSize(new Dimension(300, 50));
+               add(comboBox, BorderLayout.PAGE_START);
+
+               TextField textField = new TextField("wpisz tekst", 4);
+               textField.setPreferredSize(new Dimension(500, 300));
+               add(textField, BorderLayout.CENTER);
+
+               JButton confirmButton = new JButton("WPROWADŹ");
+               confirmButton.setPreferredSize(new Dimension(100, 50));
+               confirmButton.setMargin(new Insets(500, 0, 500, 0));
+               add(confirmButton, BorderLayout.LINE_END);
+
+
             }
             case MODIFY -> {
+                BorderLayout borderLayout = new BorderLayout();
+                setLayout(borderLayout);
+
                 ActionListener actionListener = new ActionListener(programWindow, this);
-                System.out.println("dup");
+                System.out.println("modyfikacja");
                 setBackground(Color.lightGray);
-                add(backButton);
+                add(backButton, BorderLayout.PAGE_END);
                 backButton.addActionListener(actionListener);
+
+                JComboBox<String> comboBox = new JComboBox<>(listOfTables);
+                comboBox.setPreferredSize(new Dimension(300, 50));
+                add(comboBox, BorderLayout.PAGE_START);
+
+                TextField textField = new TextField("wpisz tekst", 4);
+                textField.setPreferredSize(new Dimension(500, 300));
+                add(textField, BorderLayout.CENTER);
+
+                JButton confirmButton = new JButton("WPROWADŹ");
+                confirmButton.setPreferredSize(new Dimension(100, 50));
+                confirmButton.setMargin(new Insets(500, 0, 500, 0));
+                add(confirmButton, BorderLayout.LINE_END);
             }
             case QUERY -> {
+                BorderLayout borderLayout = new BorderLayout();
+                setLayout(borderLayout);
+
                 ActionListener actionListener = new ActionListener(programWindow, this);
-                System.out.println("buź");
+                System.out.println("zapytania");
+                setBackground(Color.lightGray);
+                add(backButton, BorderLayout.PAGE_END);
+                backButton.addActionListener(actionListener);
+
+                JComboBox<String> comboBox = new JComboBox<>(listOfQuery);
+                comboBox.setPreferredSize(new Dimension(300, 50));
+                add(comboBox, BorderLayout.PAGE_START);
+
+                TextField textField = new TextField("wpisz tekst", 4);
+                textField.setPreferredSize(new Dimension(500, 300));
+                add(textField, BorderLayout.CENTER);
+
+                JButton confirmButton = new JButton("POKAŻ");
+                confirmButton.setPreferredSize(new Dimension(100, 50));
+                confirmButton.setMargin(new Insets(500, 0, 500, 0));
+                add(confirmButton, BorderLayout.LINE_END);
+            }
+            case ADDITIONAL -> {
+                ActionListener actionListener = new ActionListener(programWindow, this);
+                System.out.println("dodatki");
                 setBackground(Color.lightGray);
                 add(backButton);
                 backButton.addActionListener(actionListener);
+
             }
         }
 
     }
-    
+
+
     private class ActionListener implements java.awt.event.ActionListener {
 
         ProgramWindow programWindow;
@@ -106,6 +177,13 @@ public class ProgramPanel extends JPanel {
                 System.out.println("4");
                 programPanel = new ProgramPanel(programWindow, connection);
                 programWindow.setContentPane(programPanel);
+                programWindow.invalidate();
+                programWindow.validate();
+
+            } else if (e.getSource().equals(button4)) {
+                System.out.println("5");
+                ProgramPanel addonsPanel = new ProgramPanel(programWindow, ADDITIONAL);
+                programWindow.setContentPane(addonsPanel);
                 programWindow.invalidate();
                 programWindow.validate();
 
