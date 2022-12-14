@@ -1,9 +1,13 @@
 package UI;
 
+import engine.MySQLConnector;
+import engine.ReportGenerator;
+import net.sf.jasperreports.engine.JRException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.sql.Connection;
+import java.sql.SQLException;
 
 public class ProgramPanel extends JPanel {
 
@@ -16,17 +20,23 @@ public class ProgramPanel extends JPanel {
     JButton button2;
     JButton button3;
     JButton button4;
-    JButton backButton = new JButton("Powrót");;
+    JButton backButton = new JButton("Powrót");
+    JButton repButton1;
+    JButton repButton2;
+    JButton repButton3;
+    JButton repButton4;
 
-    Connection connection;
+    JTextArea reportTwoText = new JTextArea("wprowadź warunek: (nazwa województwa)");
 
-    String listOfTables[] ={"Lokale", "Magazyn", "Menu",
+    MySQLConnector connection;
+
+    String[] listOfTables ={"Lokale", "Magazyn", "Menu",
             "Skladniki", "Pracownicy", "Rachunki", "Sale", "Wyposazenie kuchni",
             "Wyposazenie sali", "Zamowienia", "Zapotrzebowanie"};
 
-    String listOfQuery[] = {"Zapytanie", "Zapytanie2"};
+    String[] listOfQuery = {"Zapytanie", "Zapytanie2"};
 
-    public ProgramPanel(ProgramWindow programWindow, Connection connection) {
+    public ProgramPanel(ProgramWindow programWindow, MySQLConnector connection) {
         this.connection = connection;
         setLayout(new FlowLayout(FlowLayout.CENTER));
         ActionListener actionListener = new ActionListener(programWindow, this);
@@ -129,9 +139,41 @@ public class ProgramPanel extends JPanel {
                 add(confirmButton, BorderLayout.LINE_END);
             }
             case ADDITIONAL -> {
+                GridLayout gridLayout = new GridLayout(5, 2, 100, 100);
+                setLayout(gridLayout);
+
                 ActionListener actionListener = new ActionListener(programWindow, this);
-                System.out.println("dodatki");
                 setBackground(Color.lightGray);
+
+                //PIERWSZY RAPORT
+                JLabel reportOneLabel = new JLabel("LISTA PRACOWNIKA PODZIELONA ZE WZGLEDU NA UMOWE");
+                repButton1 = new JButton("Generuj");
+                add(reportOneLabel);
+                add(repButton1);
+                repButton1.addActionListener(actionListener);
+
+                //DRUGI RAPORT
+                repButton2 = new JButton("Generuj");
+                add(reportTwoText);
+                add(repButton2);
+                repButton2.addActionListener(actionListener);
+
+                //TRZECI RAPORT
+                JLabel reportTwoLabel = new JLabel("LISTA WSZYSTKICH RACHUNKÓW ");
+                repButton3 = new JButton("Generuj");
+                add(reportTwoLabel);
+                add(repButton3);
+                repButton3.addActionListener(actionListener);
+
+                //CZWARTY RAPORT
+                JLabel reportThreeLabel = new JLabel("CZWARTY Z WYKRESEM RAPORT ");
+                repButton4 = new JButton("Generuj");
+                add(reportThreeLabel);
+                add(repButton4);
+                repButton4.addActionListener(actionListener);
+
+                JLabel backLabel = new JLabel("POWRÓT DO MENU GŁOWNEGO ");
+                add(backLabel);
                 add(backButton);
                 backButton.addActionListener(actionListener);
 
@@ -146,11 +188,12 @@ public class ProgramPanel extends JPanel {
         ProgramWindow programWindow;
         ProgramPanel programPanel;
 
+
+
         public ActionListener(ProgramWindow programWindow, ProgramPanel programPanel) {
             this.programWindow = programWindow;
             this.programPanel = programPanel;
         }
-
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -187,6 +230,73 @@ public class ProgramPanel extends JPanel {
                 programWindow.invalidate();
                 programWindow.validate();
 
+            } else if (e.getSource().equals(repButton1)) {
+
+                firstReport();
+
+            } else if (e.getSource().equals(repButton2)) {
+
+                secondReport();
+
+            } else if (e.getSource().equals(repButton3)) {
+
+                ReportGenerator reportGenerator;
+                try {
+                    reportGenerator = new ReportGenerator();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    reportGenerator.generateThirdReport();
+                } catch (JRException | SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            } else if (e.getSource().equals(repButton4)) {
+
+                ReportGenerator reportGenerator;
+                try {
+                    reportGenerator = new ReportGenerator();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    reportGenerator.generateFourthReport();
+                } catch (JRException | SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        }
+
+        private void firstReport() {
+            ReportGenerator reportGenerator;
+            try {
+                reportGenerator = new ReportGenerator();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            try {
+                reportGenerator.generateFirstReport();
+            } catch (JRException | SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+
+        private void secondReport() {
+            ReportGenerator reportGenerator;
+            try {
+                reportGenerator = new ReportGenerator();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            try {
+                String condition = reportTwoText.getText();
+                System.out.println(condition);
+                reportGenerator.generateSecondReport(condition);
+            } catch (JRException | SQLException ex) {
+                throw new RuntimeException(ex);
             }
         }
     }
