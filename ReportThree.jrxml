@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rachunek" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f83bcb1e-bca6-410f-a606-ffb285221fd8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Restaurant"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select  idRachunku ,cena, napiwek, Potrawy, imię, nazwisko, (cena + napiwek) as cena
+from rachunki
+left join pracownicy p on p.idPracownika = rachunki.Pracownicy_idPracownika
+]]>
+	</queryString>
+	<field name="idRachunku" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idRachunku"/>
+		<property name="com.jaspersoft.studio.field.label" value="idRachunku"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="rachunki"/>
+	</field>
+	<field name="cena" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cena"/>
+		<property name="com.jaspersoft.studio.field.label" value="cena"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="rachunki"/>
+	</field>
+	<field name="napiwek" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="napiwek"/>
+		<property name="com.jaspersoft.studio.field.label" value="napiwek"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="rachunki"/>
+	</field>
+	<field name="Potrawy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Potrawy"/>
+		<property name="com.jaspersoft.studio.field.label" value="Potrawy"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="rachunki"/>
+	</field>
+	<field name="imię" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="imię"/>
+		<property name="com.jaspersoft.studio.field.label" value="imię"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="nazwisko" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nazwisko"/>
+		<property name="com.jaspersoft.studio.field.label" value="nazwisko"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="COLUMN_7" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cena"/>
+		<property name="com.jaspersoft.studio.field.label" value="cena"/>
+	</field>
+	<variable name="Variable_1" class="java.lang.String">
+		<variableExpression><![CDATA[$F{cena}+$F{napiwek}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="400" height="55" uuid="9f1459f4-3f22-412b-9be2-7d1f1ee83199"/>
+				<textElement textAlignment="Center">
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RACHUNKI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="134" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="43" width="70" height="30" uuid="989d1239-7f13-4a42-aff0-bf0e2ba5143d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91b1966b-a1a6-4380-b27d-f4ede9ccd03a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cena}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="43" width="100" height="30" uuid="fc11dde4-24b3-4127-b4c0-883740463791">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91b1966b-a1a6-4380-b27d-f4ede9ccd03a"/>
+				</reportElement>
+				<text><![CDATA[cena]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="73" width="70" height="30" uuid="89828e79-9afb-40cc-8816-8217a7f1b97f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46ade480-83fe-410a-a924-4aa2308124bf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{napiwek}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="73" width="100" height="30" uuid="d2d18e4b-44f5-4c4f-98c7-85b69363845b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46ade480-83fe-410a-a924-4aa2308124bf"/>
+				</reportElement>
+				<text><![CDATA[napiwek]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="50" width="100" height="30" uuid="97e37cbc-a3b1-4921-bf5e-1741887a998d"/>
+				<text><![CDATA[wystaawiający pracownik:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="50" width="90" height="30" uuid="48eb54fb-8b26-4c8d-8ec9-c59a24bf04ea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7628f869-619f-46a0-b5e6-f2b784e82c63"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{imię}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="50" width="100" height="30" uuid="ea91b71f-9a59-4a54-83b5-bf11a29afdd4"/>
+				<textFieldExpression><![CDATA[$F{nazwisko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="10" width="100" height="20" uuid="d2a846e9-712a-41b1-a8e1-ddf1ab4eb94b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Potrawy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="10" width="70" height="20" uuid="5beba0dc-2d35-4e09-b222-062bfb6c06a0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idRachunku}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="100" width="560" height="1" uuid="b32448ff-9e76-4619-a501-de7aad4d3bbc"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="103" width="100" height="16" uuid="0229b365-b609-424c-99b0-189fe7d5807d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PODSUMOWANIE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="119" width="560" height="1" uuid="105a7f32-cd42-49fb-b568-542d9b0829c8"/>
+			</line>
+			<textField>
+				<reportElement x="120" y="104" width="30" height="15" uuid="b16d44f4-2fb3-4347-a3c3-439ee8d6c540">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8ad32f0-017c-468f-a13f-88de475c6aa6"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_7}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="30" width="560" height="1" uuid="05e11423-c1bb-4774-a333-13f922ff037d"/>
+			</line>
+			<staticText>
+				<reportElement x="150" y="104" width="25" height="15" uuid="3ae7ff35-b13f-4ac2-9071-414cafde6081"/>
+				<text><![CDATA[PLN]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="90" height="14" uuid="b6801bd6-be3d-403c-be1d-4cb407cd7e53"/>
+				<text><![CDATA[WYSTAWIONO:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="90" y="14" width="100" height="16" uuid="f1c27deb-58a6-48a4-abd0-b5cd2bff1ce4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="190" y="15" width="100" height="15" uuid="e9f121b8-c448-4377-8284-791d55b875e9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

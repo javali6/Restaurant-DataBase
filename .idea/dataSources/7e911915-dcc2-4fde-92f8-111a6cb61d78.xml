@@ -5,6 +5,93 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <Grants>|root||root|localhost|ALTER|G
+|root||root|localhost|ALTER ROUTINE|G
+|root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
+|root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
+|root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
+|root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
+|root||root|localhost|AUDIT_ABORT_EXEMPT|G
+|root||root|localhost|AUDIT_ADMIN|G
+|root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||mysql.session|localhost|BACKUP_ADMIN|G
+|root||root|localhost|BACKUP_ADMIN|G
+|root||root|localhost|BINLOG_ADMIN|G
+|root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
+|root||mysql.session|localhost|CLONE_ADMIN|G
+|root||root|localhost|CLONE_ADMIN|G
+|root||mysql.session|localhost|CONNECTION_ADMIN|G
+|root||root|localhost|CONNECTION_ADMIN|G
+|root||root|localhost|CREATE|G
+|root||root|localhost|CREATE ROLE|G
+|root||root|localhost|CREATE ROUTINE|G
+|root||root|localhost|CREATE TABLESPACE|G
+|root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||root|localhost|CREATE USER|G
+|root||root|localhost|CREATE VIEW|G
+|root||root|localhost|DELETE|G
+|root||root|localhost|DROP|G
+|root||root|localhost|DROP ROLE|G
+|root||root|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||root|localhost|EVENT|G
+|root||root|localhost|EXECUTE|G
+|root||root|localhost|FILE|G
+|root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
+|root||mysql.session|localhost|FIREWALL_EXEMPT|G
+|root||mysql.sys|localhost|FIREWALL_EXEMPT|G
+|root||root|localhost|FIREWALL_EXEMPT|G
+|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||root|localhost|FLUSH_STATUS|G
+|root||root|localhost|FLUSH_TABLES|G
+|root||root|localhost|FLUSH_USER_RESOURCES|G
+|root||root|localhost|GROUP_REPLICATION_ADMIN|G
+|root||root|localhost|GROUP_REPLICATION_STREAM|G
+|root||root|localhost|INDEX|G
+|root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||root|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||root|localhost|INSERT|G
+|root||root|localhost|LOCK TABLES|G
+|root||root|localhost|PASSWORDLESS_USER_ADMIN|G
+|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||root|localhost|PROCESS|G
+|root||root|localhost|REFERENCES|G
+|root||root|localhost|RELOAD|G
+|root||root|localhost|REPLICATION CLIENT|G
+|root||root|localhost|REPLICATION SLAVE|G
+|root||root|localhost|REPLICATION_APPLIER|G
+|root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||root|localhost|RESOURCE_GROUP_ADMIN|G
+|root||root|localhost|RESOURCE_GROUP_USER|G
+|root||root|localhost|ROLE_ADMIN|G
+|root||mysql.infoschema|localhost|SELECT|G
+|root||root|localhost|SELECT|G
+|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||root|localhost|SERVICE_CONNECTION_ADMIN|G
+|root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
+|root||root|localhost|SESSION_VARIABLES_ADMIN|G
+|root||root|localhost|SET_USER_ID|G
+|root||root|localhost|SHOW DATABASES|G
+|root||root|localhost|SHOW VIEW|G
+|root||root|localhost|SHOW_ROUTINE|G
+|root||mysql.session|localhost|SHUTDOWN|G
+|root||root|localhost|SHUTDOWN|G
+|root||mysql.session|localhost|SUPER|G
+|root||root|localhost|SUPER|G
+|root||mysql.infoschema|localhost|SYSTEM_USER|G
+|root||mysql.session|localhost|SYSTEM_USER|G
+|root||mysql.sys|localhost|SYSTEM_USER|G
+|root||root|localhost|SYSTEM_USER|G
+|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||root|localhost|TRIGGER|G
+|root||root|localhost|UPDATE|G
+|root||root|localhost|XA_RECOVER_ADMIN|G
+|root||root|localhost|grant option|G
+performance_schema|schema||mysql.session|localhost|SELECT|G
+sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <ServerVersion>8.0.31</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
@@ -926,16 +1013,23 @@
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="294" parent="1" name="mysql.infoschema">
+      <CanLogin>0</CanLogin>
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="295" parent="1" name="mysql.session">
+      <CanLogin>0</CanLogin>
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="296" parent="1" name="mysql.sys">
+      <CanLogin>0</CanLogin>
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="297" parent="1" name="root">
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
     <routine id="298" parent="289" name="add_lokal">
       <Definer>root@localhost</Definer>
@@ -967,694 +1061,840 @@
       <RoutineKind>procedure</RoutineKind>
       <SourceTextLength>96</SourceTextLength>
     </routine>
-    <table id="304" parent="289" name="lokale"/>
-    <table id="305" parent="289" name="magazyn"/>
-    <table id="306" parent="289" name="menu"/>
-    <table id="307" parent="289" name="menu_has_zamówienia"/>
-    <table id="308" parent="289" name="menu_składniki"/>
-    <table id="309" parent="289" name="pracownicy"/>
-    <table id="310" parent="289" name="rachunki"/>
-    <table id="311" parent="289" name="sala_bankietowa"/>
-    <table id="312" parent="289" name="sala_koncertowa"/>
-    <table id="313" parent="289" name="sala_restauracyjna"/>
-    <table id="314" parent="289" name="sale"/>
-    <table id="315" parent="289" name="wiadomości"/>
-    <table id="316" parent="289" name="wyposażenie kuchni"/>
-    <table id="317" parent="289" name="zamowieniadata"/>
-    <table id="318" parent="289" name="zamówienia"/>
-    <table id="319" parent="289" name="zapotrzebowanie"/>
-    <argument id="320" parent="298" name="id">
+    <routine id="304" parent="289" name="wystaw_rachunek">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>460</SourceTextLength>
+    </routine>
+    <table id="305" parent="289" name="lokale">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="306" parent="289" name="magazyn">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="307" parent="289" name="menu">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="308" parent="289" name="menu_has_zamówienia">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="309" parent="289" name="menu_składniki">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="310" parent="289" name="pracownicy">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="311" parent="289" name="rachunki">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="312" parent="289" name="sala_bankietowa">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="313" parent="289" name="sala_koncertowa">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="314" parent="289" name="sala_restauracyjna">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="315" parent="289" name="sale">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="316" parent="289" name="wiadomości">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="317" parent="289" name="wyposażenie kuchni">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="318" parent="289" name="zamowieniadata">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="319" parent="289" name="zamówienia">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="320" parent="289" name="zapotrzebowanie">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <argument id="321" parent="298" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="321" parent="298" name="numSale">
+    <argument id="322" parent="298" name="numSale">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </argument>
-    <argument id="322" parent="298" name="street">
+    <argument id="323" parent="298" name="street">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </argument>
-    <argument id="323" parent="298" name="city">
+    <argument id="324" parent="298" name="city">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </argument>
-    <argument id="324" parent="298" name="zipcode">
+    <argument id="325" parent="298" name="zipcode">
       <DataType>varchar(45)|0s</DataType>
       <Position>5</Position>
     </argument>
-    <argument id="325" parent="298" name="state">
+    <argument id="326" parent="298" name="state">
       <DataType>varchar(45)|0s</DataType>
       <Position>6</Position>
     </argument>
-    <argument id="326" parent="299" name="id">
+    <argument id="327" parent="299" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="327" parent="299" name="potrawa">
+    <argument id="328" parent="299" name="potrawa">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </argument>
-    <argument id="328" parent="299" name="dl_przygot">
+    <argument id="329" parent="299" name="dl_przygot">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </argument>
-    <argument id="329" parent="299" name="idLokal">
+    <argument id="330" parent="299" name="idLokal">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </argument>
-    <argument id="330" parent="300" name="id">
+    <argument id="331" parent="300" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="331" parent="300" name="stanowisko">
+    <argument id="332" parent="300" name="stanowisko">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </argument>
-    <argument id="332" parent="300" name="nazwisko">
+    <argument id="333" parent="300" name="nazwisko">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </argument>
-    <argument id="333" parent="300" name="imie">
+    <argument id="334" parent="300" name="imie">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </argument>
-    <argument id="334" parent="300" name="umowa">
+    <argument id="335" parent="300" name="umowa">
       <DataType>varchar(45)|0s</DataType>
       <Position>5</Position>
     </argument>
-    <argument id="335" parent="300" name="student">
+    <argument id="336" parent="300" name="student">
       <DataType>varchar(45)|0s</DataType>
       <Position>6</Position>
     </argument>
-    <argument id="336" parent="300" name="idLokal">
+    <argument id="337" parent="300" name="idLokal">
       <DataType>int|0s</DataType>
       <Position>7</Position>
     </argument>
-    <argument id="337" parent="301" name="id">
+    <argument id="338" parent="301" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="338" parent="301" name="typ">
+    <argument id="339" parent="301" name="typ">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </argument>
-    <argument id="339" parent="301" name="lokal">
+    <argument id="340" parent="301" name="lokal">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </argument>
-    <argument id="340" parent="302" name="id">
+    <argument id="341" parent="302" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="341" parent="302" name="stolikid">
+    <argument id="342" parent="302" name="stolikid">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </argument>
-    <argument id="342" parent="302" name="potrawa">
+    <argument id="343" parent="302" name="potrawa">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </argument>
-    <argument id="343" parent="302" name="priorytet">
+    <argument id="344" parent="302" name="priorytet">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </argument>
-    <argument id="344" parent="303" name="id">
+    <argument id="345" parent="303" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </argument>
-    <column id="345" parent="304" name="idLokalu">
+    <argument id="346" parent="304" name="id">
+      <DataType>int|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="347" parent="304" name="idzamówienia">
+      <DataType>int|0s</DataType>
+      <Position>2</Position>
+    </argument>
+    <argument id="348" parent="304" name="cena">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </argument>
+    <argument id="349" parent="304" name="napiwek">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </argument>
+    <argument id="350" parent="304" name="idPracownika">
+      <DataType>int|0s</DataType>
+      <Position>5</Position>
+    </argument>
+    <column id="351" parent="305" name="idLokalu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="346" parent="304" name="Liczba sali">
+    <column id="352" parent="305" name="Liczba sali">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="347" parent="304" name="ulica">
+    <column id="353" parent="305" name="ulica">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="348" parent="304" name="miejscowość">
+    <column id="354" parent="305" name="miejscowość">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="349" parent="304" name="kod_pocztowy">
+    <column id="355" parent="305" name="kod_pocztowy">
       <DataType>varchar(45)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="350" parent="304" name="województwo">
+    <column id="356" parent="305" name="województwo">
       <DataType>varchar(45)|0s</DataType>
       <Position>6</Position>
     </column>
-    <key id="351" parent="304" name="PRIMARY">
+    <index id="357" parent="305" name="PRIMARY">
+      <ColNames>idLokalu</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="358" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idLokalu</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="352" parent="305" name="idPrzedmiotu">
+    <column id="359" parent="306" name="idPrzedmiotu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="353" parent="305" name="nazwa">
+    <column id="360" parent="306" name="nazwa">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="354" parent="305" name="ilość">
+    <column id="361" parent="306" name="ilość">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="355" parent="305" name="data ostatniego zamówienia">
+    <column id="362" parent="306" name="data ostatniego zamówienia">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="356" parent="305" name="termin przydatności">
+    <column id="363" parent="306" name="termin przydatności">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="357" parent="305" name="Lokale_idLokale">
+    <column id="364" parent="306" name="Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="358" parent="305" name="Zapotrzebowanie_idPrzedmiotu">
+    <column id="365" parent="306" name="Zapotrzebowanie_idPrzedmiotu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="359" parent="305" name="fk_Magazyn_Lokale1">
+    <foreign-key id="366" parent="306" name="fk_Magazyn_Lokale1">
       <ColNames>Lokale_idLokale</ColNames>
       <RefColNames>idLokalu</RefColNames>
       <RefTableName>lokale</RefTableName>
     </foreign-key>
-    <foreign-key id="360" parent="305" name="fk_Magazyn_Zapotrzebowanie1">
+    <foreign-key id="367" parent="306" name="fk_Magazyn_Zapotrzebowanie1">
       <ColNames>Zapotrzebowanie_idPrzedmiotu</ColNames>
       <RefColNames>idPrzedmiotu</RefColNames>
       <RefTableName>zapotrzebowanie</RefTableName>
     </foreign-key>
-    <index id="361" parent="305" name="fk_Magazyn_Lokale1_idx">
+    <index id="368" parent="306" name="PRIMARY">
+      <ColNames>idPrzedmiotu
+Lokale_idLokale
+Zapotrzebowanie_idPrzedmiotu</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="369" parent="306" name="fk_Magazyn_Lokale1_idx">
       <ColNames>Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="362" parent="305" name="fk_Magazyn_Zapotrzebowanie1_idx">
+    <index id="370" parent="306" name="fk_Magazyn_Zapotrzebowanie1_idx">
       <ColNames>Zapotrzebowanie_idPrzedmiotu</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="363" parent="305" name="PRIMARY">
+    <key id="371" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idPrzedmiotu
-Lokale_idLokale
-Zapotrzebowanie_idPrzedmiotu</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="364" parent="306" name="idPotrawy">
+    <column id="372" parent="307" name="idPotrawy">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="365" parent="306" name="nazwa potrawy">
+    <column id="373" parent="307" name="nazwa potrawy">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="366" parent="306" name="długość przygotowania">
+    <column id="374" parent="307" name="długość przygotowania">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="367" parent="306" name="Lokale_idLokale">
+    <column id="375" parent="307" name="Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="368" parent="306" name="fk_Menu_Lokale1_idx">
+    <index id="376" parent="307" name="PRIMARY">
+      <ColNames>idPotrawy
+Lokale_idLokale</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="377" parent="307" name="fk_Menu_Lokale1_idx">
       <ColNames>Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="369" parent="306" name="PRIMARY">
+    <key id="378" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idPotrawy
-Lokale_idLokale</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="370" parent="307" name="Menu_idPotrawy">
+    <column id="379" parent="308" name="Menu_idPotrawy">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="371" parent="307" name="Menu_Lokale_idLokale">
+    <column id="380" parent="308" name="Menu_Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="372" parent="307" name="Zamówienia_idZamówienia">
+    <column id="381" parent="308" name="Zamówienia_idZamówienia">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="373" parent="307" name="fk_Menu_has_Zamówienia_Menu1">
+    <foreign-key id="382" parent="308" name="fk_Menu_has_Zamówienia_Menu1">
       <ColNames>Menu_idPotrawy
 Menu_Lokale_idLokale</ColNames>
       <RefColNames>idPotrawy
 Lokale_idLokale</RefColNames>
       <RefTableName>menu</RefTableName>
     </foreign-key>
-    <foreign-key id="374" parent="307" name="fk_Menu_has_Zamówienia_Zamówienia1">
+    <foreign-key id="383" parent="308" name="fk_Menu_has_Zamówienia_Zamówienia1">
       <ColNames>Zamówienia_idZamówienia</ColNames>
       <RefColNames>idZamówienia</RefColNames>
       <RefTableName>zamówienia</RefTableName>
     </foreign-key>
-    <index id="375" parent="307" name="fk_Menu_has_Zamówienia_Menu1_idx">
+    <index id="384" parent="308" name="PRIMARY">
+      <ColNames>Menu_idPotrawy
+Menu_Lokale_idLokale
+Zamówienia_idZamówienia</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="385" parent="308" name="fk_Menu_has_Zamówienia_Menu1_idx">
       <ColNames>Menu_idPotrawy
 Menu_Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="376" parent="307" name="fk_Menu_has_Zamówienia_Zamówienia1_idx">
+    <index id="386" parent="308" name="fk_Menu_has_Zamówienia_Zamówienia1_idx">
       <ColNames>Zamówienia_idZamówienia</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="377" parent="307" name="PRIMARY">
+    <key id="387" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>Menu_idPotrawy
-Menu_Lokale_idLokale
-Zamówienia_idZamówienia</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="378" parent="308" name="id_składników">
+    <column id="388" parent="309" name="id_składników">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="379" parent="308" name="składnik_1">
+    <column id="389" parent="309" name="składnik_1">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="380" parent="308" name="składnik_2">
+    <column id="390" parent="309" name="składnik_2">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="381" parent="308" name="składnik_3">
+    <column id="391" parent="309" name="składnik_3">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="382" parent="308" name="składnik_4">
+    <column id="392" parent="309" name="składnik_4">
       <DataType>varchar(45)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="383" parent="308" name="id_potrawy">
+    <column id="393" parent="309" name="id_potrawy">
       <DataType>int|0s</DataType>
       <Position>6</Position>
     </column>
-    <foreign-key id="384" parent="308" name="id_potrawy">
+    <foreign-key id="394" parent="309" name="id_potrawy">
       <ColNames>id_potrawy</ColNames>
       <RefColNames>idPotrawy</RefColNames>
       <RefTableName>menu</RefTableName>
     </foreign-key>
-    <index id="385" parent="308" name="id_potrawy">
+    <index id="395" parent="309" name="PRIMARY">
+      <ColNames>id_składników</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="396" parent="309" name="id_potrawy">
       <ColNames>id_potrawy</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="386" parent="308" name="PRIMARY">
+    <key id="397" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>id_składników</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="387" parent="309" name="idPracownika">
+    <column id="398" parent="310" name="idPracownika">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="388" parent="309" name="stanowisko">
+    <column id="399" parent="310" name="stanowisko">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="389" parent="309" name="nazwisko">
+    <column id="400" parent="310" name="nazwisko">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="390" parent="309" name="imię">
+    <column id="401" parent="310" name="imię">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="391" parent="309" name="rodzaj umowy">
+    <column id="402" parent="310" name="rodzaj umowy">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="392" parent="309" name="status studenta">
+    <column id="403" parent="310" name="status studenta">
       <DataType>varchar(45)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="393" parent="309" name="Lokale_idLokale">
+    <column id="404" parent="310" name="Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="394" parent="309" name="fk_Pracownicy_Lokale">
+    <foreign-key id="405" parent="310" name="fk_Pracownicy_Lokale">
       <ColNames>Lokale_idLokale</ColNames>
       <RefColNames>idLokalu</RefColNames>
       <RefTableName>lokale</RefTableName>
     </foreign-key>
-    <index id="395" parent="309" name="fk_Pracownicy_Lokale_idx">
+    <index id="406" parent="310" name="PRIMARY">
+      <ColNames>idPracownika
+Lokale_idLokale</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="407" parent="310" name="fk_Pracownicy_Lokale_idx">
       <ColNames>Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="396" parent="309" name="PRIMARY">
+    <key id="408" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idPracownika
-Lokale_idLokale</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <trigger id="397" parent="309" name="trigger_worker">
+    <trigger id="409" parent="310" name="trigger_worker">
       <Definer>root@localhost</Definer>
       <Events>I</Events>
       <SourceTextLength>258</SourceTextLength>
       <Turn>after-row</Turn>
     </trigger>
-    <trigger id="398" parent="309" name="trigger_fire_worker">
+    <trigger id="410" parent="310" name="trigger_fire_worker">
       <Definer>root@localhost</Definer>
       <Events>D</Events>
       <SourceTextLength>172</SourceTextLength>
       <Turn>after-row</Turn>
     </trigger>
-    <column id="399" parent="310" name="idRachunku">
+    <column id="411" parent="311" name="idRachunku">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="400" parent="310" name="cena">
+    <column id="412" parent="311" name="cena">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="401" parent="310" name="napiwek">
+    <column id="413" parent="311" name="napiwek">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="402" parent="310" name="Potrawy">
+    <column id="414" parent="311" name="Potrawy">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="403" parent="310" name="Pracownicy_idPracownika">
+    <column id="415" parent="311" name="Pracownicy_idPracownika">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="404" parent="310" name="Pracownicy_Lokale_idLokale">
+    <column id="416" parent="311" name="Pracownicy_Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="405" parent="310" name="Menu_Lokale_idLokale">
+    <column id="417" parent="311" name="Menu_Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="406" parent="310" name="fk_Rachunki_Pracownicy1">
+    <column id="418" parent="311" name="idZamówienia">
+      <DataType>int|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="419" parent="311" name="fk_Rachunki_Pracownicy1">
       <ColNames>Pracownicy_idPracownika
 Pracownicy_Lokale_idLokale</ColNames>
       <RefColNames>idPracownika
 Lokale_idLokale</RefColNames>
       <RefTableName>pracownicy</RefTableName>
     </foreign-key>
-    <index id="407" parent="310" name="fk_Rachunki_Pracownicy1_idx">
+    <foreign-key id="420" parent="311" name="id_zamówienia">
+      <ColNames>idZamówienia</ColNames>
+      <RefColNames>idZamówienia</RefColNames>
+      <RefTableName>zamówienia</RefTableName>
+    </foreign-key>
+    <index id="421" parent="311" name="PRIMARY">
+      <ColNames>idRachunku
+Pracownicy_idPracownika
+Pracownicy_Lokale_idLokale
+Menu_Lokale_idLokale</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="422" parent="311" name="fk_Rachunki_Pracownicy1_idx">
       <ColNames>Pracownicy_idPracownika
 Pracownicy_Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="408" parent="310" name="fk_Rachunki_Menu1_idx">
+    <index id="423" parent="311" name="fk_Rachunki_Menu1_idx">
       <ColNames>Menu_Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="409" parent="310" name="PRIMARY">
+    <index id="424" parent="311" name="id_zamówienia">
+      <ColNames>idZamówienia</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="425" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idRachunku
-Pracownicy_idPracownika
-Pracownicy_Lokale_idLokale
-Menu_Lokale_idLokale</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="410" parent="311" name="idSali">
+    <column id="426" parent="312" name="idSali">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="411" parent="311" name="ilość_ruchomych_stolików">
+    <column id="427" parent="312" name="ilość_ruchomych_stolików">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <foreign-key id="412" parent="311" name="id_sali">
+    <foreign-key id="428" parent="312" name="id_sali">
       <ColNames>idSali</ColNames>
       <RefColNames>idSale</RefColNames>
       <RefTableName>sale</RefTableName>
     </foreign-key>
-    <index id="413" parent="311" name="id_sali">
+    <index id="429" parent="312" name="id_sali">
       <ColNames>idSali</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="414" parent="312" name="idSali">
+    <column id="430" parent="313" name="idSali">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="415" parent="312" name="liczba_instrumentów">
+    <column id="431" parent="313" name="liczba_instrumentów">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="416" parent="312" name="liczba_foteli">
+    <column id="432" parent="313" name="liczba_foteli">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="417" parent="312" name="idSali">
+    <foreign-key id="433" parent="313" name="idSali">
       <ColNames>idSali</ColNames>
       <RefColNames>idSale</RefColNames>
       <RefTableName>sale</RefTableName>
     </foreign-key>
-    <index id="418" parent="312" name="idSali">
+    <index id="434" parent="313" name="idSali">
       <ColNames>idSali</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="419" parent="313" name="idSali">
+    <column id="435" parent="314" name="idSali">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="420" parent="313" name="liczba_krzeseł">
+    <column id="436" parent="314" name="liczba_krzeseł">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="421" parent="313" name="liczba_stołów">
+    <column id="437" parent="314" name="liczba_stołów">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="422" parent="313" name="sala_restauracyjna_sale_null_fk">
+    <foreign-key id="438" parent="314" name="sala_restauracyjna_sale_null_fk">
       <ColNames>idSali</ColNames>
       <RefColNames>idSale</RefColNames>
       <RefTableName>sale</RefTableName>
     </foreign-key>
-    <index id="423" parent="313" name="sala_restauracyjna_sale_null_fk">
+    <index id="439" parent="314" name="sala_restauracyjna_sale_null_fk">
       <ColNames>idSali</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="424" parent="314" name="idSale">
+    <column id="440" parent="315" name="idSale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="425" parent="314" name="typ_sali">
+    <column id="441" parent="315" name="typ_sali">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="426" parent="314" name="Lokale_idLokale">
+    <column id="442" parent="315" name="Lokale_idLokale">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="427" parent="314" name="fk_Sale_Lokale1">
+    <foreign-key id="443" parent="315" name="fk_Sale_Lokale1">
       <ColNames>Lokale_idLokale</ColNames>
       <RefColNames>idLokalu</RefColNames>
       <RefTableName>lokale</RefTableName>
     </foreign-key>
-    <index id="428" parent="314" name="fk_Sale_Lokale1_idx">
+    <index id="444" parent="315" name="PRIMARY">
+      <ColNames>idSale
+Lokale_idLokale</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="445" parent="315" name="fk_Sale_Lokale1_idx">
       <ColNames>Lokale_idLokale</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="429" parent="314" name="PRIMARY">
+    <key id="446" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idSale
-Lokale_idLokale</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="430" parent="315" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="447" parent="316" name="id">
+      <AutoIncrement>12</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="431" parent="315" name="wiadomość">
+    <column id="448" parent="316" name="wiadomość">
       <DataType>varchar(45)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="432" parent="315" name="tabela">
+    <column id="449" parent="316" name="tabela">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="433" parent="315" name="data">
+    <column id="450" parent="316" name="data">
       <DataType>datetime|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="434" parent="315" name="id_pracownika">
+    <column id="451" parent="316" name="id_pracownika">
       <DataType>int|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="435" parent="315" name="idpracownika">
+    <index id="452" parent="316" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="453" parent="316" name="idpracownika">
       <ColNames>id_pracownika</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="436" parent="315" name="PRIMARY">
+    <key id="454" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="437" parent="316" name="idSprzętu">
+    <column id="455" parent="317" name="idSprzętu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="438" parent="316" name="nazwa">
+    <column id="456" parent="317" name="nazwa">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="439" parent="316" name="ilość">
+    <column id="457" parent="317" name="ilość">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="440" parent="316" name="stan">
+    <column id="458" parent="317" name="stan">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="441" parent="316" name="data kontroli">
+    <column id="459" parent="317" name="data kontroli">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="442" parent="316" name="następna kontrola">
+    <column id="460" parent="317" name="następna kontrola">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="443" parent="316" name="Lokale_idLokalu">
+    <column id="461" parent="317" name="Lokale_idLokalu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="444" parent="316" name="fk_Wyposażenie Kuchni_Lokale1">
+    <foreign-key id="462" parent="317" name="fk_Wyposażenie Kuchni_Lokale1">
       <ColNames>Lokale_idLokalu</ColNames>
       <RefColNames>idLokalu</RefColNames>
       <RefTableName>lokale</RefTableName>
     </foreign-key>
-    <index id="445" parent="316" name="fk_Wyposażenie Kuchni_Lokale1_idx">
+    <index id="463" parent="317" name="PRIMARY">
+      <ColNames>idSprzętu
+Lokale_idLokalu</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="464" parent="317" name="fk_Wyposażenie Kuchni_Lokale1_idx">
       <ColNames>Lokale_idLokalu</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="446" parent="316" name="PRIMARY">
+    <key id="465" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idSprzętu
-Lokale_idLokalu</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="447" parent="317" name="idZamowienia">
+    <column id="466" parent="318" name="idZamowienia">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="448" parent="317" name="data_dodania">
+    <column id="467" parent="318" name="data_dodania">
       <DataType>datetime|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="449" parent="317" name="data_realizacji">
+    <column id="468" parent="318" name="data_realizacji">
       <DataType>datetime|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="450" parent="317" name="id">
+    <foreign-key id="469" parent="318" name="id">
       <ColNames>idZamowienia</ColNames>
       <RefColNames>idZamówienia</RefColNames>
       <RefTableName>zamówienia</RefTableName>
     </foreign-key>
-    <index id="451" parent="317" name="id">
+    <index id="470" parent="318" name="id">
       <ColNames>idZamowienia</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="452" parent="318" name="idZamówienia">
+    <column id="471" parent="319" name="idZamówienia">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="453" parent="318" name="idStolika">
+    <column id="472" parent="319" name="idStolika">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="454" parent="318" name="potrawy">
+    <column id="473" parent="319" name="potrawy">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="455" parent="318" name="priorytet">
+    <column id="474" parent="319" name="priorytet">
       <DataType>varchar(45)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="456" parent="318" name="status">
+    <column id="475" parent="319" name="status">
       <DataType>varchar(45)|0s</DataType>
       <Position>5</Position>
     </column>
-    <key id="457" parent="318" name="PRIMARY">
+    <index id="476" parent="319" name="PRIMARY">
+      <ColNames>idZamówienia</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="477" parent="319" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idZamówienia</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <trigger id="458" parent="318" name="data_przyjecia">
+    <trigger id="478" parent="319" name="data_przyjecia">
       <Definer>root@localhost</Definer>
       <Events>I</Events>
       <SourceTextLength>175</SourceTextLength>
       <Turn>after-row</Turn>
     </trigger>
-    <trigger id="459" parent="318" name="data_realizacja">
+    <trigger id="479" parent="319" name="data_realizacja">
       <Definer>root@localhost</Definer>
       <Events>U</Events>
       <SourceTextLength>199</SourceTextLength>
       <Turn>after-row</Turn>
     </trigger>
-    <column id="460" parent="319" name="idPrzedmiotu">
+    <column id="480" parent="320" name="idPrzedmiotu">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="461" parent="319" name="tygoniowe zużycie">
+    <column id="481" parent="320" name="tygoniowe zużycie">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="462" parent="319" name="ilość w magazynie">
+    <column id="482" parent="320" name="ilość w magazynie">
       <DataType>varchar(45)|0s</DataType>
       <Position>3</Position>
     </column>
-    <key id="463" parent="319" name="PRIMARY">
+    <index id="483" parent="320" name="PRIMARY">
+      <ColNames>idPrzedmiotu</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="484" parent="320" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>idPrzedmiotu</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

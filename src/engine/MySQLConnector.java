@@ -17,4 +17,20 @@ public class MySQLConnector {
         }
         return statement.executeQuery();
     }
+
+    public int executeUpdate(String sql, Object... args) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement(sql);
+        for (int i = 0; i < args.length; i++) {
+            statement.setObject(i+1, args[i]);
+        }
+        return statement.executeUpdate();
+    }
+
+    public void close() throws SQLException {
+        connection.close();
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
 }

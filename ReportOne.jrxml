@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportTwo" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Restaurant"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="rest" uuid="2f0d1e36-0a3b-45b4-98c3-ba9e5e9ab1b4">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Restaurant"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="res" uuid="812c4c21-07d3-444f-b8bc-aa6cd46d57c4">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cHJhY293bmljeSAsMTUsMTUsOGVlMzU0M2UtZDU1ZS00NGUxLTlhNWMtYWMyZTJhM2E5ODI1Ow=="/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Restaurant"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT idPracownika,
+	nazwisko,
+	imię,
+	stanowisko
+FROM pracownicy
+WHERE 
+	 'rodzaj umowy' = 'praca']]>
+		</queryString>
+		<field name="idPracownika" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="idPracownika"/>
+			<property name="com.jaspersoft.studio.field.label" value="idPracownika"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+		</field>
+		<field name="nazwisko" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nazwisko"/>
+			<property name="com.jaspersoft.studio.field.label" value="nazwisko"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+		</field>
+		<field name="imię" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="imię"/>
+			<property name="com.jaspersoft.studio.field.label" value="imię"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+		</field>
+		<field name="stanowisko" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="stanowisko"/>
+			<property name="com.jaspersoft.studio.field.label" value="stanowisko"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+		</field>
+		<group name="idPracownika">
+			<groupExpression><![CDATA[$F{idPracownika}]]></groupExpression>
+		</group>
+		<group name="nazwisko">
+			<groupExpression><![CDATA[$F{nazwisko}]]></groupExpression>
+		</group>
+		<group name="imię">
+			<groupExpression><![CDATA[$F{imię}]]></groupExpression>
+		</group>
+		<group name="stanowisko">
+			<groupExpression><![CDATA[$F{stanowisko}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[select idPracownika, nazwisko, imię, stanowisko, `rodzaj umowy`
+from pracownicy
+order by `rodzaj umowy`]]>
+	</queryString>
+	<field name="idPracownika" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idPracownika"/>
+		<property name="com.jaspersoft.studio.field.label" value="idPracownika"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="nazwisko" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nazwisko"/>
+		<property name="com.jaspersoft.studio.field.label" value="nazwisko"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="imię" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="imię"/>
+		<property name="com.jaspersoft.studio.field.label" value="imię"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="stanowisko" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="stanowisko"/>
+		<property name="com.jaspersoft.studio.field.label" value="stanowisko"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<field name="rodzaj umowy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rodzaj umowy"/>
+		<property name="com.jaspersoft.studio.field.label" value="rodzaj umowy"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pracownicy"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="20" y="0" width="280" height="62" uuid="1a652692-054a-40f3-ade5-68d8da36626d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PracownicyTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="70" y="60" width="196" height="22" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Podział pracowników]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="83" width="250" height="28" uuid="f0bfb1ea-a85a-47cd-a1a4-43f22b45e80f"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lista pracowników pogrupowana względem 
+rodzaju umowy]]></text>
+			</staticText>
+			<image>
+				<reportElement x="340" y="-110" width="267" height="209" uuid="5d64e5b3-07bb-48ab-89dc-15c0c46bb19a"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="2" width="98" height="30" uuid="6481ce39-2f4a-49e7-83c6-f50f0bb15757"/>
+				<text><![CDATA[idPracownika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="2" width="100" height="30" uuid="ce673e48-6859-43c4-9cea-24bd26e63b43">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1edd7c9a-66c2-49ae-8019-4379bad92487"/>
+				</reportElement>
+				<text><![CDATA[nazwisko]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="2" width="100" height="30" uuid="9fed473e-b01d-495d-9c6f-3a6171d44a26">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3c00a2d-12f4-4b49-b2b3-e1be14b4b71a"/>
+				</reportElement>
+				<text><![CDATA[imię]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="2" width="100" height="30" uuid="76964616-f448-44a4-a430-8cdc3adfe3af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d61016f-4985-418b-a8e6-9c8cf6b254e4"/>
+				</reportElement>
+				<text><![CDATA[stanowisko]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="2" width="100" height="30" uuid="e53459ce-0b12-413e-9554-7c1d70e669bf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75750397-22ad-4fda-9bad-d228e09cfaed"/>
+				</reportElement>
+				<text><![CDATA[rodzaj umowy]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="1a61a836-d137-48b1-ad67-6ff64600bf93"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="1" y="1" width="100" height="30" uuid="0e78cdaf-3caa-44f4-b61f-611f2cb5e02c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6797f6a7-8daa-46c2-b0ec-bae9d507cc0a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{idPracownika}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="1" width="100" height="30" uuid="2b3665db-31a0-4dd9-9514-03407e096402">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1edd7c9a-66c2-49ae-8019-4379bad92487"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nazwisko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="100" height="30" uuid="c9772c24-9d7b-4156-81cc-7f86a2e42056">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3c00a2d-12f4-4b49-b2b3-e1be14b4b71a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{imię}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="100" height="30" uuid="09302375-67eb-4e38-8b9d-4e3c611bbb7b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d61016f-4985-418b-a8e6-9c8cf6b254e4"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{stanowisko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="1" width="100" height="30" uuid="6434e40a-46be-4c05-89a6-73c8d061a973">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75750397-22ad-4fda-9bad-d228e09cfaed"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{rodzaj umowy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="227" y="5" width="100" height="14" uuid="5a850630-c1c8-4d6e-b3f3-230c5796c391"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="a3f56392-58c4-4ccb-86f4-38c0d2deeb9b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="100" y="0" width="100" height="20" uuid="8c9af29d-f72f-41f2-b090-44a344c00181"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
